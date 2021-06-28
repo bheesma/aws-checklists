@@ -33,7 +33,7 @@
 * Restrict RDS access to specific IP addresses
 * Place RDS in private subnet
 * Disable Public access to instance and snapshots
-* Enable Encryption at Rest
+* Enable encryption at rest
 * Enable and Force access by SSL
 * Enable auto minor version upgrade
 * Rotate passwords periodically
@@ -41,14 +41,22 @@
 ## CloudWatch
 
 ## Kinesis
+* Enable encryption at rest
 
 ## SQS
+* Enable encryption at rest
+* Assign appropriate SQL policy
 
 ## Systems Manager
 
 ## AWS Account
+* Disable public S3 bucket access
+* Enable MFA for root account
+* Delete access key and secret for root account
 
 ## Lambda
+* Encrypt environment variables
+* Limit IAM role permissions
 
 ## Batch
 
@@ -57,10 +65,19 @@
 ## AWS Backup
 
 ## Dynamo DB
+* Enable encryption at rest
 
 ## DMS
 
 ## CloudFront
+* Use Lambda@Edge to add additional security headers
+* Use appropriate SSL certificates
+* Enable WAF
+* Use regional restriction if applicable
+* If integrating with S3, use origin identity
+* Use latest TLS version
+* Use custom error pages that do not reveal too much information
+* Use signed cookies or signed urls if applicable
 
 ## Route 53
 
@@ -68,9 +85,11 @@
 
 ## AWS Organization
 * SCP
-* 
 
 ## CloudFormation
+* Enable drift detection
+* Enable deletion protection if applicable
+* Use IAM role for stack creation
 
 ## Config
 
@@ -81,17 +100,22 @@
 ## Athena
 
 ## IAM
-* External ID
+* Use External ID if integrating with lots of third party AWS accounts
 
 ## Cognito
 
 ## Secrets Manager
+* Utilize password rotation
 
 ## Certificate Manager
 
 ## KMS
 
 ## API Gateway
+* Use MTLS for authentication
+* Use API Key
+* Set throttling in usage plans
+* Use private API endpoint if invoking from within VPC
 
 ## Step Functions
 
