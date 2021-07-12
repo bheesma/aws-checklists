@@ -1,5 +1,6 @@
 # aws-security-checklists
 
+Note: IAM is used to provide permissions to all of the AWS Services, so it is not mentioned under each service.
 
 ## S3
 * Enable [Encryption at Rest](https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-encryption.html)
@@ -39,6 +40,7 @@
 * Rotate passwords periodically
 
 ## CloudWatch
+* Use KMS Key for encrypting CloudWatch Log Groups.
 
 ## Kinesis
 * Enable encryption at rest
@@ -59,10 +61,13 @@
 * Limit IAM role permissions
 
 ## Batch
+* IAM based security
+* AWS Batch uses ECS which in turn uses EC2 instances. Hence the security for ECS & EC2 instance apply.
 
 ## ECS / ECR / EKS
 
 ## AWS Backup
+* Enable encryption for the resource that is being backed up. The AWS Backup uses the same KMS Key used for encrypting the resource.
 
 ## Dynamo DB
 * Enable encryption at rest
@@ -80,11 +85,10 @@
 * Use signed cookies or signed urls if applicable
 
 ## Route 53
-
-## CodeTools
+* Prevent unauthorized transfer to another registrar by enabling domain lock
 
 ## AWS Organization
-* SCP
+* Use Service Control Policies/Organizational Units to control access in child AWS accounts.
 
 ## CloudFormation
 * Enable drift detection
@@ -123,4 +127,4 @@
 
 ## PinPoint
 
-## 
+
